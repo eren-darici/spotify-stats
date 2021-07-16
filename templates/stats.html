@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+<body>
+
+<div class="center">
+    {% for song, percent in occurence.items() %}
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ percent * 1000 }}%" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="{{ len }}">
+                {{ song }}
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>
